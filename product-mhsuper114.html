@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MHSUPER 114 - Product Detail</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <header class="top-bar">
+    <div class="logo">
+      <a href="products.html"><img src="mfood_logo.png" alt="MFOOD Logo"></a>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html" class="products-btn">Products</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="w-full flex flex-col items-center bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[#333] to-[#111] pt-[100px] pb-[100px] px-6">
+    <div class="flex flex-col items-center gap-4 w-full">
+      <div class="flex items-center gap-4 mb-4">
+        <h1 class="text-4xl md:text-5xl font-extrabold font-[Montserrat] tracking-wide text-white">MHSUPER 114</h1>
+        <span class="bg-yellow-400 text-[#222] font-bold px-4 py-1 rounded-full text-sm shadow-md">Model Industrial</span>
+      </div>
+      <div class="text-lg md:text-xl font-medium text-white mb-2">Shpejtësi dhe Efikasitet Industrial</div>
+      <div class="text-base text-gray-200 max-w-2xl text-center mb-10">Kjo makinë është e dizajnuar për të prodhuar hamburgerë dhe qofte gourmet. Arrini përsosmërinë në trashësinë dhe pamjen e produkteve tuaja me levën tonë të sheshtimit me rrotë.</div>
+    </div>
+    <div class="w-full flex justify-center mt-0 mb-0">
+      <div class="bg-white rounded-[30px] shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-100 w-[80%] max-w-[1000px] flex flex-col items-center mx-auto p-0">
+        <div class="p-10 md:p-14 w-full flex flex-col items-center">
+          <img src="images/MHSUPER_114.jpg" alt="MHSUPER 114" id="mainProductImg" class="rounded-2xl w-full h-auto object-contain mb-6" style="max-height:400px;">
+          <div class="product-thumbnails flex gap-4 justify-center">
+            <img src="images/MHSUPER_114.jpg" alt="MHSUPER 114" class="thumb w-16 h-16 object-cover rounded-lg border-2 border-gray-200 cursor-pointer" data-img="images/MHSUPER_114.jpg">
+            <img src="images/5.jpg" alt="MHSUPER 114 alt view" class="thumb w-16 h-16 object-cover rounded-lg border-2 border-gray-200 cursor-pointer" data-img="images/5.jpg">
+            <img src="images/MH114.png" alt="MH114" class="thumb w-16 h-16 object-cover rounded-lg border-2 border-gray-200 cursor-pointer" data-img="images/MH114.png">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Grid -->
+  <section class="max-w-5xl mx-auto mt-24 mb-12 px-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 bg-white border border-gray-200 rounded-2xl shadow-sm py-10 px-6 md:px-12">
+      <div class="flex flex-col items-center text-center">
+        <div class="bg-gray-100 rounded-full w-20 h-20 flex items-center justify-center mb-4">
+          <svg class="w-10 h-10 text-[#8b0000]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/><path d="M7 9V7a5 5 0 0110 0v2"/><rect width="20" height="8" x="2" y="9" rx="4"/></svg>
+        </div>
+        <div class="font-bold text-lg mb-1">Trashësi Perfekte</div>
+        <div class="text-gray-500 text-sm">Levë sheshtimi me rrotë për trashësi të personalizuar.</div>
+      </div>
+      <div class="flex flex-col items-center text-center">
+        <div class="bg-gray-100 rounded-full w-20 h-20 flex items-center justify-center mb-4">
+          <svg class="w-10 h-10 text-[#8b0000]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div class="font-bold text-lg mb-1">Material Premium</div>
+        <div class="text-gray-500 text-sm">Çelik inox ushqimor, certifikuar CE.</div>
+      </div>
+      <div class="flex flex-col items-center text-center">
+        <div class="bg-gray-100 rounded-full w-20 h-20 flex items-center justify-center mb-4">
+          <svg class="w-10 h-10 text-[#8b0000]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 16h-1v-4h-1m4 4h1a2 2 0 002-2v-2a2 2 0 00-2-2h-1a2 2 0 00-2 2v2a2 2 0 002 2z"/><circle cx="12" cy="12" r="10"/></svg>
+        </div>
+        <div class="font-bold text-lg mb-1">Përdorim i Gjerë</div>
+        <div class="text-gray-500 text-sm">Ideale për mish, peshk, perime dhe brumë biskotash.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="product-specs fade-in max-w-3xl mx-auto mb-16 px-4">
+    <h2 class="text-2xl font-bold font-[Montserrat] mb-6">Specifikime Teknike</h2>
+    <table class="w-full border-collapse rounded-2xl overflow-hidden">
+      <thead class="bg-gray-50">
+        <tr>
+          <th class="py-4 px-6 text-left font-semibold text-gray-700">Përmasa</th>
+          <th class="py-4 px-6 text-left font-semibold text-gray-700">Pesha</th>
+          <th class="py-4 px-6 text-left font-semibold text-gray-700">Materiali</th>
+          <th class="py-4 px-6 text-left font-semibold text-gray-700">Voltazhi</th>
+          <th class="py-4 px-6 text-left font-semibold text-gray-700">Kapaciteti</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white">
+        <tr>
+          <td class="py-3 px-6 border-b border-gray-100">597x1319x1564 mm</td>
+          <td class="py-3 px-6 border-b border-gray-100">145 Kg</td>
+          <td class="py-3 px-6 border-b border-gray-100">Çelik inox</td>
+          <td class="py-3 px-6 border-b border-gray-100">230V / 50Hz</td>
+          <td class="py-3 px-6 border-b border-gray-100">Deri në 2,000 hamburgerë/orë</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="flex justify-center mb-16">
+    <a href="contact.html" class="bg-[#8b0000] text-white text-xl font-bold py-5 px-16 rounded-full shadow-lg hover:scale-105 transition-all duration-150">Na kontaktoni!</a>
+  </div>
+
+  <footer>
+    <!-- ...existing footer code from index.html... -->
+  </footer>
+  <script src="script.js"></script>
+  <script>
+    // Fade-in animation on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+      function fadeInOnScroll() {
+        document.querySelectorAll('.fade-in').forEach(function(el) {
+          var rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 60) {
+            el.classList.add('visible');
+          }
+        });
+      }
+      window.addEventListener('scroll', fadeInOnScroll);
+      fadeInOnScroll();
+    });
+    // Thumbnail click to change main image
+    document.querySelectorAll('.product-thumbnails .thumb').forEach(function(thumb) {
+      thumb.addEventListener('click', function() {
+        document.getElementById('mainProductImg').src = thumb.dataset.img;
+        document.querySelectorAll('.product-thumbnails .thumb').forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+      });
+    });
+    // (Image zoom on hover removed)
+  </script>
+</body>
+</html>

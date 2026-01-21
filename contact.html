@@ -115,41 +115,42 @@
       window.addEventListener('scroll', fadeInOnScroll);
       fadeInOnScroll();
     });
-    // Simple form validation
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      var form = e.target;
-      var formData = new FormData(form);
-      var msgBox = document.getElementById('formMsg');
-      msgBox.style.display = 'none';
-      // Collect form data
-      const data = {
-        name: form.name.value,
-        email: form.email.value,
-        phone: form.phone.value,
-        message: form.message.value,
-        makina: Array.from(form.querySelectorAll('input[name="makina"]:checked')).map(cb => cb.value).join(', ')
-      };
-      fetch('http://localhost:3001/sendmail', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      })
-      .then(response => response.text())
-      .then(result => {
-        if (result.trim() === 'success') {
-          msgBox.textContent = 'Thank you for contacting us! We will get back to you soon.';
-          form.reset();
-        } else {
+
+    // Contact form submission (safe for all pages)
+    const contactForm = document.querySelector('#contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        var form = e.target;
+        var msgBox = document.getElementById('formMsg');
+        msgBox.style.display = 'none';
+        const data = {
+          name: form.name.value,
+          email: form.email.value,
+          phone: form.phone.value,
+          message: form.message.value,
+          makina: Array.from(form.querySelectorAll('input[name="makina"]:checked')).map(cb => cb.value).join(', ')
+        };
+        try {
+          const response = await fetch('/api/sendmail', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          });
+          const result = await response.text();
+          if (result.toLowerCase().includes('success')) {
+            msgBox.textContent = 'Thank you for contacting us! We will get back to you soon.';
+            form.reset();
+          } else {
+            msgBox.textContent = 'There was an error sending your message. Please try again later.';
+          }
+          msgBox.style.display = 'block';
+        } catch {
           msgBox.textContent = 'There was an error sending your message. Please try again later.';
+          msgBox.style.display = 'block';
         }
-        msgBox.style.display = 'block';
-      })
-      .catch(() => {
-        msgBox.textContent = 'There was an error sending your message. Please try again later.';
-        msgBox.style.display = 'block';
       });
-    });
+    }
   </script>
 </body>
 </html>

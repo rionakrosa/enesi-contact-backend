@@ -127,3 +127,37 @@ document.addEventListener('DOMContentLoaded', function() {
     `).join('');
   }
 });
+
+// Contact form submission (safe for all pages)
+const contactForm = document.querySelector('#contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    var form = e.target;
+    var msgBox = document.getElementById('formMsg');
+    msgBox.style.display = 'none';
+    const data = {
+      name: form.name.value,
+      email: form.email.value,
+      phone: form.phone.value,
+      message: form.message.value,
+      makina: Array.from(form.querySelectorAll('input[name="makina"]:checked')).map(cb => cb.value).join(', ')
+    };
+    try {
+      const response = await fetch('/api/sendmail', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      if (response.ok) {
+        alert("Message sent!");
+      } else {
+        const errorData = await response.json();
+        console.error("Backend Error:", errorData);
+        alert("Error: " + errorData.error);
+      }
+    } catch (err) {
+      alert("There was an error sending your message. Please try again later.");
+    }
+  });
+}
